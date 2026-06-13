@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Sheth | Data Analyst Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2d3748;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3182ce;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Sections */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #2d3748;
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            background: #f9fafb;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+        
+        .project-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-impact {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 1rem 0;
+        }
+        
+        .skills-tag {
+            display: inline-block;
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .contact h2 {
+            border-bottom-color: white;
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* Image Gallery in Project */
+        .project-images {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .project-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 0.75rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            nav a {
+                margin: 0 0.75rem;
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        .expand-section {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .expand-section.active {
+            display: block;
+        }
+        
+        /* Key Metrics in Project */
+        .metrics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+            background: #edf2f7;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .metric-label {
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div id="home" class="hero">
+        <h1>Dhrumil Sheth</h1>
+        <p>Data Analyst | SQL • Power BI • Python<br>Transforming Business Data Into Actionable Insights</p>
+        <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="/resume.pdf" class="btn btn-secondary">Download Resume</a>
+            <a href="mailto:dhrumilsheth1512@gmail.com" class="btn btn-secondary">Email Me</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Quick Stats -->
+        <section>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Months Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">12%</div>
+                    <div class="stat-label">Avg Revenue Impact</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Records Analyzed</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I believe data doesn't create value—decisions do.</p>
+            <p>Most organizations collect data but don't act on it. I bridge that gap by building dashboards that get used, conducting analyses that get implemented, and translating complex insights into clear business recommendations.</p>
+            
+            <h3>What I Do</h3>
+            <div>
+                <h4>📊 Dashboard Development</h4>
+                <p>Building Power BI dashboards that get used. Not beautiful dashboards that nobody looks at—dashboards that answer real questions and drive decisions.</p>
+            </div>
+            <div>
+                <h4>📈 Data Analysis & Insights</h4>
+                <p>Taking messy, complex datasets and finding the patterns that matter. I don't just report what happened. I explain why it happened and what to do about it.</p>
+            </div>
+            <div>
+                <h4>🔍 Root Cause Analysis</h4>
+                <p>When a metric moves wrong, I dig deeper to find the real cause. Is it a data quality issue? A real business change? A seasonal pattern? The answers matter.</p>
+            </div>
+            <div>
+                <h4>⚙️ Process Automation</h4>
+                <p>I automate the repetitive stuff so teams can focus on the thinking. Small technical setup = massive time freed up for strategy.</p>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Kaggle Churn Prediction -->
+                <div class="project-card">
+                    <h4>Customer Churn Prediction Dashboard</h4>
+                    <div class="project-impact">20.38%</div>
+                    <p><strong>Churn Rate Identified</strong></p>
+                    <p style="margin-top: 1rem; color: #4a5568; font-size: 0.9rem;">Built comprehensive Power BI dashboard analyzing 10,000+ customer records to identify churn patterns, risk factors, and actionable retention strategies across demographics and product segments.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="skills-tag">Power BI</span>
+                        <span class="skills-tag">Data Analytics</span>
+                        <span class="skills-tag">Dashboard Design</span>
+                    </div>
+                    <button class="btn" style="background: #667eea; color: white; margin-top: 1rem; width: 100%; border: none; padding: 0.5rem;" onclick="toggleExpand(this)">Read More</button>
+                    <div class="expand-section">
+                        <h5 style="margin-top: 1rem;">The Problem</h5>
+                        <p>XYZ Bank needed to understand customer churn patterns to implement targeted retention strategies. With 10,000 customers and a 20.38% churn rate, identifying at-risk segments was critical.</p>
+                        
+                        <h5 style="margin-top: 1rem;">The Approach</h5>
+                        <p>Analyzed customer dataset across multiple dimensions including demographics, product usage, satisfaction, and behavioral metrics. Created interactive Power BI dashboard with drill-down capabilities.</p>
+                        
+                        <h5 style="margin-top: 1rem;">Key Findings</h5>
+                        <div class="metrics-container">
+                            <div class="metric">
+                                <div class="metric-value">32.44%</div>
+                                <div class="metric-label">Churn in Germany</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">25.07%</div>
+                                <div class="metric-label">Female Churn Rate</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1409</div>
+                                <div class="metric-label">High-Risk Customers</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">22%</div>
+                                <div class="metric-label">Max Churn Rate</div>
+                            </div>
+                        </div>
+                        
+                        <h5 style="margin-top: 1rem;">Insights Generated</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li><strong>Geographic Risk:</strong> Germany shows significantly higher churn (32.44%) compared to Spain (16.67%) and France (16.17%)</li>
+                            <li><strong>Gender Disparity:</strong> Female customers churn at 25.07% vs. 16.47% for males—25% higher risk</li>
+                            <li><strong>Product Impact:</strong> Customers with 1 product show highest churn (1409 customers), suggesting need for product engagement strategies</li>
+                            <li><strong>Satisfaction Correlation:</strong> Satisfaction score directly correlates with churn—score of 2 shows peak churn at 22%</li>
+                            <li><strong>Complaint Pattern:</strong> Zero complaints = fewer customers; one complaint = exponential churn risk (linear growth to 2000+ customers)</li>
+                            <li><strong>Age Vulnerability:</strong> Peak churn concentration in 40-50 age group with secondary spike at younger ages</li>
+                        </ul>
+                        
+                        <h5 style="margin-top: 1rem;">Recommendations</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Implement Germany-specific retention program with localized service improvements</li>
+                            <li>Create female-focused engagement strategy addressing unique pain points</li>
+                            <li>Design multi-product incentives to increase customer stickiness beyond single product</li>
+                            <li>Establish complaint escalation protocol—complaints are churn predictors</li>
+                            <li>Develop age-segmented retention campaigns for 40-50 age group</li>
+                            <li>Proactive satisfaction monitoring with interventions at satisfaction score drops</li>
+                        </ul>
+                        
+                        <h5 style="margin-top: 1rem;">Dashboard Features</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Real-time churn rate KPI tracking</li>
+                            <li>Interactive filtering by country, gender, product count, and satisfaction score</li>
+                            <li>Trend analysis showing complaints vs. churn correlation</li>
+                            <li>Age distribution with churn overlay for demographic targeting</li>
+                            <li>Segmentation matrix for multi-variable analysis</li>
+                            <li>Drill-down capability for investigation at customer group level</li>
+                        </ul>
+                        
+                        <div class="project-images">
+                            <p style="font-weight: bold; margin-top: 1.5rem;">Dashboard Visualization</p>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='200' y='150' font-size='16' text-anchor='middle' fill='%23666' dominant-baseline='middle'%3EPower BI Dashboard Screenshot%3C/text%3E%3Ctext x='200' y='170' font-size='12' text-anchor='middle' fill='%23999'%3E(Add your dashboard image here)%3C/text%3E%3C/svg%3E" alt="Customer Churn Dashboard" style="border: 2px solid #667eea;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Cineplex Revenue Forecasting -->
+                <div class="project-card">
+                    <h4>Cineplex Revenue Forecasting</h4>
+                    <div class="project-impact">17%</div>
+                    <p><strong>Potential Revenue Uplift</strong></p>
+                    <p style="margin-top: 1rem; color: #4a5568; font-size: 0.9rem;">Analyzed ticket and concession sales data to identify optimization opportunities. Developed forecasting models and identified key revenue drivers through customer segmentation.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="skills-tag">Power BI</span>
+                        <span class="skills-tag">Python</span>
+                        <span class="skills-tag">Forecasting</span>
+                    </div>
+                    <button class="btn" style="background: #667eea; color: white; margin-top: 1rem; width: 100%; border: none; padding: 0.5rem;" onclick="toggleExpand(this)">Read More</button>
+                    <div class="expand-section">
+                        <h5 style="margin-top: 1rem;">The Problem</h5>
+                        <p>Cineplex needed to understand revenue optimization opportunities across ticket sales and concession items. They had data but no clear pricing strategy.</p>
+                        <h5 style="margin-top: 1rem;">The Solution</h5>
+                        <p>Analyzed multi-month sales data to identify seasonal patterns, customer segments, and revenue drivers. Built forecasting models to project revenue under different scenarios.</p>
+                        <h5 style="margin-top: 1rem;">Key Insights</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Tuesday promotions drive disproportionate volume</li>
+                            <li>Concession bundles outperform individual items</li>
+                            <li>VIP membership has higher lifetime value</li>
+                            <li>High-value customers are price-sensitive; high-volume are promotion-sensitive</li>
+                        </ul>
+                        <h5 style="margin-top: 1rem;">Impact</h5>
+                        <p>Projected 17% potential revenue uplift through optimized pricing and promotional strategies.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3: BN Consultancy Pricing -->
+                <div class="project-card">
+                    <h4>Regional Pricing Optimization</h4>
+                    <div class="project-impact">12%</div>
+                    <p><strong>Revenue Increase</strong></p>
+                    <p style="margin-top: 1rem; color: #4a5568; font-size: 0.9rem;">Analyzed 100,000+ tractor bidding records across 5 Indian states. Identified pricing inefficiencies and optimized regional strategy, improving pricing accuracy by 8%.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="skills-tag">SQL</span>
+                        <span class="skills-tag">Excel</span>
+                        <span class="skills-tag">Root Cause Analysis</span>
+                    </div>
+                    <button class="btn" style="background: #667eea; color: white; margin-top: 1rem; width: 100%; border: none; padding: 0.5rem;" onclick="toggleExpand(this)">Read More</button>
+                    <div class="expand-section">
+                        <h5 style="margin-top: 1rem;">The Problem</h5>
+                        <p>BN Consultancy had pricing data spread across transactions but couldn't see regional patterns or inefficiencies. Pricing decisions were reactive.</p>
+                        <h5 style="margin-top: 1rem;">The Solution</h5>
+                        <p>Consolidated 100,000+ bidding records, cleaned data, and analyzed regional demand patterns and competitive pricing. Conducted root cause analysis on underperforming regions.</p>
+                        <h5 style="margin-top: 1rem;">Key Insights</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Pricing gaps between regions (some systematically underpriced)</li>
+                            <li>Regional demand varies significantly</li>
+                            <li>Competitor pricing differs by region (not uniform nationally)</li>
+                        </ul>
+                        <h5 style="margin-top: 1rem;">Impact</h5>
+                        <p>8% pricing accuracy improvement + 12% revenue increase. Also standardized reporting and reduced manual tracking by 30%.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Permanencia Dashboards -->
+                <div class="project-card">
+                    <h4>Operational Dashboard Automation</h4>
+                    <div class="project-impact">10%</div>
+                    <p><strong>Time Savings</strong></p>
+                    <p style="margin-top: 1rem; color: #4a5568; font-size: 0.9rem;">Consolidated datasets and automated reporting workflows. Built interactive Power BI dashboards reducing manual processing by 10% and improving accuracy by 15%.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="skills-tag">Power BI</span>
+                        <span class="skills-tag">SQL</span>
+                        <span class="skills-tag">Python</span>
+                    </div>
+                    <button class="btn" style="background: #667eea; color: white; margin-top: 1rem; width: 100%; border: none; padding: 0.5rem;" onclick="toggleExpand(this)">Read More</button>
+                    <div class="expand-section">
+                        <h5 style="margin-top: 1rem;">The Problem</h5>
+                        <p>Permanencia Capital had performance data in 2 sources. Manual reporting took 4+ hours weekly. No real-time visibility into operational metrics.</p>
+                        <h5 style="margin-top: 1rem;">The Solution</h5>
+                        <p>Consolidated datasets using SQL, built automated data pipelines, and created interactive Power BI dashboards with drill-down capability.</p>
+                        <h5 style="margin-top: 1rem;">Key Metrics Tracked</h5>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Service demand (volume, trends, forecasting)</li>
+                            <li>Utilization rates (capacity planning)</li>
+                            <li>Regional performance (geographic breakdown)</li>
+                            <li>Operational efficiency (trends and anomalies)</li>
+                        </ul>
+                        <h5 style="margin-top: 1rem;">Impact</h5>
+                        <p>10% reduction in manual processing time + 15% improvement in data accuracy. Enabled real-time monitoring for 5+ stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Let's Talk About Data</h2>
+            <p>I'm actively looking for Business Analyst or Data Analyst opportunities in Toronto. Whether you're hiring, have a project, or just want to discuss analytics—reach out.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>📧</p>
+                    <p><strong>Email</strong></p>
+                    <a href="mailto:dhrumilsheth1512@gmail.com">dhrumilsheth1512@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <p>🔗</p>
+                    <p><strong>LinkedIn</strong></p>
+                    <a href="https://linkedin.com/in/dhrumil1512">linkedin.com/in/dhrumil1512</a>
+                </div>
+                <div class="contact-item">
+                    <p>📱</p>
+                    <p><strong>Phone</strong></p>
+                    <a href="tel:+19053254841">905-325-4841</a>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="mailto:dhrumilsheth1512@gmail.com" class="btn btn-secondary">Send Email</a>
+                <a href="https://linkedin.com/in/dhrumil1512" class="btn btn-secondary">Connect on LinkedIn</a>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dhrumil Sheth. All rights reserved. • <a href="#" style="color: white; text-decoration: none;">Privacy</a> • <a href="#" style="color: white; text-decoration: none;">Terms</a></p>
+    </footer>
+    
+    <script>
+        function toggleExpand(button) {
+            const section = button.nextElementSibling;
+            section.classList.toggle('active');
+            button.textContent = section.classList.contains('active') ? 'Show Less' : 'Read More';
+        }
+    </script>
+</body>
+</html>
